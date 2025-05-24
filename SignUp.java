@@ -29,6 +29,7 @@ public class SignUp extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
         passwordLabel = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -36,17 +37,20 @@ public class SignUp extends javax.swing.JFrame {
         emailText = new javax.swing.JTextField();
         Signin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        passwordText = new javax.swing.JButton();
         usernameLabel = new javax.swing.JLabel();
-        usernameText = new javax.swing.JButton();
+        usernameText = new javax.swing.JTextField();
+        passwordText = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
+
+        jLabel6.setText("jLabel6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 153));
@@ -56,7 +60,7 @@ public class SignUp extends javax.swing.JFrame {
         getContentPane().add(emailLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, -1, -1));
 
         passwordLabel.setText("Password");
-        getContentPane().add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, -1, -1));
+        getContentPane().add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, -1, -1));
 
         jLabel4.setText("Already have an account? ");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, -1, -1));
@@ -68,7 +72,7 @@ public class SignUp extends javax.swing.JFrame {
                 SignUpActionPerformed(evt);
             }
         });
-        getContentPane().add(SignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 210, 20));
+        getContentPane().add(SignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 210, 30));
 
         emailText.setBackground(new java.awt.Color(204, 204, 204));
         emailText.setText("Enter the Email");
@@ -98,35 +102,15 @@ public class SignUp extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/happypaws/view/Screenshot 2025-05-22 162708.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 399, 473));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 400, 470));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/happypaws/view/Picture1.png"))); // NOI18N
-        jLabel3.setText("jLabel3");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 128, 48));
-
-        passwordText.setBackground(new java.awt.Color(204, 204, 204));
-        passwordText.setText("Enter your password");
-        passwordText.setAutoscrolls(true);
-        passwordText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        passwordText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        passwordText.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                passwordTextFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                passwordTextFocusLost(evt);
-            }
-        });
-        getContentPane().add(passwordText, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 250, 30));
-
-        usernameLabel.setBackground(new java.awt.Color(0, 0, 0));
         usernameLabel.setText("Username");
-        getContentPane().add(usernameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, -1, -1));
+        getContentPane().add(usernameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, -1, -1));
 
         usernameText.setBackground(new java.awt.Color(204, 204, 204));
-        usernameText.setText("Enter your name ");
+        usernameText.setText("Enter the username");
         usernameText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        usernameText.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        usernameText.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         usernameText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 usernameTextFocusGained(evt);
@@ -135,10 +119,30 @@ public class SignUp extends javax.swing.JFrame {
                 usernameTextFocusLost(evt);
             }
         });
-        getContentPane().add(usernameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 250, 30));
+        usernameText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameTextActionPerformed(evt);
+            }
+        });
+        getContentPane().add(usernameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 250, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/happypaws/view/Screenshot 2025-05-23 091600.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 6, 350, 460));
+        passwordText.setBackground(new java.awt.Color(204, 204, 204));
+        passwordText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        passwordText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                passwordTextActionPerformed(evt);
+            }
+        });
+        getContentPane().add(passwordText, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 250, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/happypaws/view/Screenshot 2025-05-22 172222.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 270, 320));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/happypaws/view/Picture1.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 160, 60));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/happypaws/view/Screenshot 2025-05-23 122839.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 0, 390, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -181,25 +185,25 @@ public class SignUp extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SigninActionPerformed
 
+    private void usernameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameTextActionPerformed
+
     private void usernameTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFocusGained
-     if(usernameText.getText().equals("Enter your name")){
+        if(usernameText.getText().equals("Enter the username")){
         usernameText.setText("");
-     }
+        }
     }//GEN-LAST:event_usernameTextFocusGained
 
     private void usernameTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFocusLost
-    if(usernameText.getText(). isEmpty()){
-            usernameText.setText("Enter your name ");
-    }
+        if(usernameText.getText(). isEmpty()){
+        usernameText.setText("Enter the username");
+        }
     }//GEN-LAST:event_usernameTextFocusLost
 
-    private void passwordTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTextFocusGained
-
-    }//GEN-LAST:event_passwordTextFocusGained
-
-    private void passwordTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_passwordTextFocusLost
-
-    }//GEN-LAST:event_passwordTextFocusLost
+    private void passwordTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -245,10 +249,12 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel passwordLabel;
-    private javax.swing.JButton passwordText;
+    private javax.swing.JPasswordField passwordText;
     private javax.swing.JLabel usernameLabel;
-    private javax.swing.JButton usernameText;
+    private javax.swing.JTextField usernameText;
     // End of variables declaration//GEN-END:variables
 }
