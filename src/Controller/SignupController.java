@@ -13,7 +13,6 @@ public class SignupController {
 
     public SignupController(Signup userView) {
         this.userView = userView;
-        userView.addAddUserListener(new AddUserListener());
     }
 
     public void open() {
@@ -26,7 +25,9 @@ public class SignupController {
 
     class AddUserListener implements ActionListener {
 
-        AddUserListener() {
+
+        private AddUserListener() {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
         public void actionPerformed(ActionEvent e) {
             try {
