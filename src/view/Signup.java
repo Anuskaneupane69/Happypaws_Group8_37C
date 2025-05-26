@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package view;
+package happypaws.view;
 import javax.swing.*;
 
 
@@ -10,12 +10,12 @@ import javax.swing.*;
  *
  * @author diya
  */
-public class Signup extends javax.swing.JFrame {
+public class SignUp extends javax.swing.JFrame {
 
     /**
      * Creates new form SignUp
      */
-    public Signup() {
+    public SignUp() {
         initComponents();
     }
 
@@ -29,15 +29,17 @@ public class Signup extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
         emailLabel = new javax.swing.JLabel();
         passwordLabel = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        signup = new javax.swing.JButton();
-        useremail = new javax.swing.JTextField();
-        signin = new javax.swing.JButton();
+        SignUp = new javax.swing.JButton();
+        emailText = new javax.swing.JTextField();
+        Signin = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         usernameLabel = new javax.swing.JLabel();
-        username = new javax.swing.JTextField();
-        password = new javax.swing.JPasswordField();
+        usernameText = new javax.swing.JTextField();
+        passwordText = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -47,6 +49,8 @@ public class Signup extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+
+        jLabel6.setText("jLabel6");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 153));
@@ -61,71 +65,75 @@ public class Signup extends javax.swing.JFrame {
         jLabel4.setText("Already have an account? ");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, -1, -1));
 
-        signup.setBackground(new java.awt.Color(255, 153, 51));
-        signup.setText("SignUp");
-        signup.addActionListener(new java.awt.event.ActionListener() {
+        SignUp.setBackground(new java.awt.Color(255, 153, 51));
+        SignUp.setText("SignUp");
+        SignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signupActionPerformed(evt);
+                SignUpActionPerformed(evt);
             }
         });
-        getContentPane().add(signup, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 210, 30));
+        getContentPane().add(SignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 210, 30));
 
-        useremail.setBackground(new java.awt.Color(204, 204, 204));
-        useremail.setText("Enter the Email");
-        useremail.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        useremail.addFocusListener(new java.awt.event.FocusAdapter() {
+        emailText.setBackground(new java.awt.Color(204, 204, 204));
+        emailText.setText("Enter the Email");
+        emailText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        emailText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                useremailFocusGained(evt);
+                emailTextFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                useremailFocusLost(evt);
+                emailTextFocusLost(evt);
             }
         });
-        useremail.addActionListener(new java.awt.event.ActionListener() {
+        emailText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                useremailActionPerformed(evt);
+                emailTextActionPerformed(evt);
             }
         });
-        getContentPane().add(useremail, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 250, 30));
+        getContentPane().add(emailText, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 250, 30));
 
-        signin.setText("Signin");
-        signin.addActionListener(new java.awt.event.ActionListener() {
+        Signin.setText("Signin");
+        Signin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                signinActionPerformed(evt);
+                SigninActionPerformed(evt);
             }
         });
-        getContentPane().add(signin, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 360, 65, -1));
+        getContentPane().add(Signin, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 360, 65, -1));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/happypaws/view/Screenshot 2025-05-22 162708.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, 0, 400, 470));
 
         usernameLabel.setText("Username");
         getContentPane().add(usernameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, -1, -1));
 
-        username.setBackground(new java.awt.Color(204, 204, 204));
-        username.setText("Enter the username");
-        username.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        username.addFocusListener(new java.awt.event.FocusAdapter() {
+        usernameText.setBackground(new java.awt.Color(204, 204, 204));
+        usernameText.setText("Enter the username");
+        usernameText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        usernameText.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        usernameText.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                usernameFocusGained(evt);
+                usernameTextFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                usernameFocusLost(evt);
+                usernameTextFocusLost(evt);
             }
         });
-        username.addActionListener(new java.awt.event.ActionListener() {
+        usernameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                usernameActionPerformed(evt);
+                usernameTextActionPerformed(evt);
             }
         });
-        getContentPane().add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 250, 30));
+        getContentPane().add(usernameText, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 250, 30));
 
-        password.setBackground(new java.awt.Color(204, 204, 204));
-        password.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        password.addActionListener(new java.awt.event.ActionListener() {
+        passwordText.setBackground(new java.awt.Color(204, 204, 204));
+        passwordText.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        passwordText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
+                passwordTextActionPerformed(evt);
             }
         });
-        getContentPane().add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 250, 30));
+        getContentPane().add(passwordText, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 260, 250, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/happypaws/view/Screenshot 2025-05-22 172222.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 270, 320));
@@ -139,64 +147,63 @@ public class Signup extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
+    private void SignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUpActionPerformed
 
-    }//GEN-LAST:event_signupActionPerformed
+    }//GEN-LAST:event_SignUpActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-    
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void useremailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_useremailActionPerformed
-     String email;
-        email = useremail.getText();
-    if (!email.contains("@")) {
-        JOptionPane.showMessageDialog(this, "Invalid email format!");
-    } else {
-        System.out.println("Email entered: " + email);
-    }
-    }//GEN-LAST:event_useremailActionPerformed
-
-    private void useremailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_useremailFocusGained
-      if(useremail.getText().equals("Enter the Email")){
-        useremail.setText("");
-    }  // TODO add your handling code here:
-    }//GEN-LAST:event_useremailFocusGained
-
-    private void useremailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_useremailFocusLost
-     if(useremail.getText(). isEmpty()){
-            useremail.setText("Enter the Email");
-        }   // TODO add your handling code here:
-    }//GEN-LAST:event_useremailFocusLost
-
-    private void signinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signinActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_signinActionPerformed
-
-    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
-        String name = username.getText();
+    String name = jTextField1.getText();
     if (name.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Name cannot be empty!");
     } else {
         System.out.println("Name entered: " + name);
     }
-    }//GEN-LAST:event_usernameActionPerformed
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void usernameFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFocusGained
-        if(username.getText().equals("Enter the username")){
-        username.setText("");
-        }
-    }//GEN-LAST:event_usernameFocusGained
+    private void emailTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTextActionPerformed
+     String email = emailText.getText();
+    if (!email.contains("@")) {
+        JOptionPane.showMessageDialog(this, "Invalid email format!");
+    } else {
+        System.out.println("Email entered: " + email);
+    }
+    }//GEN-LAST:event_emailTextActionPerformed
 
-    private void usernameFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameFocusLost
-        if(username.getText(). isEmpty()){
-        username.setText("Enter the username");
-        }
-    }//GEN-LAST:event_usernameFocusLost
+    private void emailTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFocusGained
+      if(emailText.getText().equals("Enter the Email")){
+        emailText.setText("");
+    }  // TODO add your handling code here:
+    }//GEN-LAST:event_emailTextFocusGained
 
-    private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
+    private void emailTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFocusLost
+     if(emailText.getText(). isEmpty()){
+            emailText.setText("Enter the Email");
+        }   // TODO add your handling code here:
+    }//GEN-LAST:event_emailTextFocusLost
+
+    private void SigninActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SigninActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordActionPerformed
+    }//GEN-LAST:event_SigninActionPerformed
+
+    private void usernameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameTextActionPerformed
+
+    private void usernameTextFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFocusGained
+        if(usernameText.getText().equals("Enter the username")){
+        usernameText.setText("");
+        }
+    }//GEN-LAST:event_usernameTextFocusGained
+
+    private void usernameTextFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_usernameTextFocusLost
+        if(usernameText.getText(). isEmpty()){
+        usernameText.setText("Enter the username");
+        }
+    }//GEN-LAST:event_usernameTextFocusLost
+
+    private void passwordTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_passwordTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -228,54 +235,26 @@ public class Signup extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Signup().setVisible(true);
+                new SignUp().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton SignUp;
+    private javax.swing.JButton Signin;
     private javax.swing.JLabel emailLabel;
+    private javax.swing.JTextField emailText;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JPasswordField password;
     private javax.swing.JLabel passwordLabel;
-    private javax.swing.JButton signin;
-    private javax.swing.JButton signup;
-    private javax.swing.JTextField useremail;
-    private javax.swing.JTextField username;
+    private javax.swing.JPasswordField passwordText;
     private javax.swing.JLabel usernameLabel;
+    private javax.swing.JTextField usernameText;
     // End of variables declaration//GEN-END:variables
-
-    public void addAddUserListener(ActionListener listener) {
-    signup.addActionListener((java.awt.event.ActionListener) listener);
-}
-
-public void addLoginListener(ActionListener listener) {
-    signin.addActionListener((java.awt.event.ActionListener) listener);
-}
-
-/**
- * @return the emailField
- */
-public javax.swing.JTextField getEmailField() {
-    return useremail;
-}
-
-/**
- * @return the passwordField
- */
-public javax.swing.JPasswordField getPasswordField() {
-    return password;
-}
-
-/**
- * @return the usernameField
- */
-public javax.swing.JTextField getUsernameField() {
-    return username;
-}
-
 }
