@@ -5,13 +5,15 @@
 package view;
 
 import java.awt.Image;
+import java.net.URL;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author diya
  */
-public class userdashboard extends javax.swing.JFrame {
+public final class userdashboard extends javax.swing.JFrame {
 
     /**
      * Creates new form userdashboard
@@ -24,12 +26,16 @@ public class userdashboard extends javax.swing.JFrame {
     public void init(){
         setImage();
     }
-    
-    public void setImage(){
-    ImageIcon icon = new ImageIcon (getClass().getResource("/view/dog5.jpg"));
-    Image img = icon.getImage().getScaledInstance(jLabelimage.getWidth(),jLabelimage.getHeight(),Image.SCALE_SMOOTH);
-    jLabelimage.setIcon(new ImageIcon(img));
+    public void setImage() {
+    URL url = getClass().getResource("/view/dog 5.jpg");
+    if (url == null) {
+        JOptionPane.showMessageDialog(this, "Image not found!");
+        return;
     }
+    ImageIcon icon = new ImageIcon(url);
+    Image img = icon.getImage().getScaledInstance(jLabelimage.getWidth(), jLabelimage.getHeight(), Image.SCALE_SMOOTH);
+    jLabelimage.setIcon(new ImageIcon(img));
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,13 +47,13 @@ public class userdashboard extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        profilecreationLabel = new javax.swing.JLabel();
+        backloginButton = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        homeButton = new javax.swing.JButton();
+        adoptionmoduleButton = new javax.swing.JButton();
+        accessoriesButton = new javax.swing.JButton();
+        userprofileButton = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel4 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -57,6 +63,7 @@ public class userdashboard extends javax.swing.JFrame {
         groomingdueLabel = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabelimage = new javax.swing.JLabel();
+        addmoreButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,12 +71,12 @@ public class userdashboard extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(142, 70, 61));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Profile Creation");
+        profilecreationLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        profilecreationLabel.setForeground(new java.awt.Color(255, 255, 255));
+        profilecreationLabel.setText("Profile Creation");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2025-05-29 004840.png"))); // NOI18N
-        jButton1.setBorder(null);
+        backloginButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2025-05-29 004840.png"))); // NOI18N
+        backloginButton.setBorder(null);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -77,41 +84,41 @@ public class userdashboard extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jButton1)
+                .addComponent(backloginButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(profilecreationLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(backloginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(profilecreationLabel)
                 .addGap(17, 17, 17))
         );
 
         jPanel3.setBackground(new java.awt.Color(250, 214, 165));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2025-06-19 152624.png"))); // NOI18N
-        jButton2.setBorder(null);
+        homeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2025-06-19 152624.png"))); // NOI18N
+        homeButton.setBorder(null);
 
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2025-06-19 152633.png"))); // NOI18N
-        jButton3.setBorder(null);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        adoptionmoduleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2025-06-19 152633.png"))); // NOI18N
+        adoptionmoduleButton.setBorder(null);
+        adoptionmoduleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                adoptionmoduleButtonActionPerformed(evt);
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2025-06-19 152645.png"))); // NOI18N
-        jButton4.setBorder(null);
+        accessoriesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2025-06-19 152645.png"))); // NOI18N
+        accessoriesButton.setBorder(null);
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2025-06-19 152652.png"))); // NOI18N
-        jButton5.setBorder(null);
+        userprofileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2025-06-19 152652.png"))); // NOI18N
+        userprofileButton.setBorder(null);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -119,13 +126,13 @@ public class userdashboard extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(homeButton)
                 .addGap(156, 156, 156)
-                .addComponent(jButton3)
+                .addComponent(adoptionmoduleButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
+                .addComponent(accessoriesButton)
                 .addGap(160, 160, 160)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userprofileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(59, 59, 59))
         );
         jPanel3Layout.setVerticalGroup(
@@ -133,15 +140,15 @@ public class userdashboard extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(accessoriesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(homeButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(adoptionmoduleButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton5)))
+                        .addComponent(userprofileButton)))
                 .addContainerGap())
         );
 
@@ -211,6 +218,14 @@ public class userdashboard extends javax.swing.JFrame {
                 .addContainerGap(16, Short.MAX_VALUE))
         );
 
+        addmoreButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2025-06-20 094259.png"))); // NOI18N
+        addmoreButton.setText("jButton1");
+        addmoreButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addmoreButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -218,13 +233,20 @@ public class userdashboard extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(426, Short.MAX_VALUE))
+                .addGap(153, 153, 153)
+                .addComponent(addmoreButton, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(addmoreButton, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(116, Short.MAX_VALUE))
         );
 
@@ -262,12 +284,16 @@ public class userdashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void adoptionmoduleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adoptionmoduleButtonActionPerformed
         AdoptionModule am = new AdoptionModule();
         am.show();
         
         dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_adoptionmoduleButtonActionPerformed
+
+    private void addmoreButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addmoreButtonActionPerformed
+    
+    }//GEN-LAST:event_addmoreButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -305,14 +331,13 @@ public class userdashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton accessoriesButton;
+    private javax.swing.JButton addmoreButton;
+    private javax.swing.JButton adoptionmoduleButton;
+    private javax.swing.JButton backloginButton;
     private javax.swing.JLabel detailsLabel;
     private javax.swing.JLabel groomingdueLabel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton homeButton;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelimage;
     private javax.swing.JPanel jPanel1;
@@ -323,5 +348,7 @@ public class userdashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel pikuLabel;
+    private javax.swing.JLabel profilecreationLabel;
+    private javax.swing.JButton userprofileButton;
     // End of variables declaration//GEN-END:variables
 }

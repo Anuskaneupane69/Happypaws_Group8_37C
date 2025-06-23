@@ -4,10 +4,16 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author diya
  */
 class addProduct {
+
+    static void addActionListener(ActionListener listener) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }

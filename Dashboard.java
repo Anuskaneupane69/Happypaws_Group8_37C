@@ -5,6 +5,8 @@
 package view;
 
 import java.awt.event.ActionListener;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -143,14 +145,17 @@ public void addProductListener(ActionListener listener) {
 }
 
 public javax.swing.JTextField getProductImage() {
+        JTextField productImage = null;
     return productImage;
 }
 
 public javax.swing.JTextField getProductName() {
+        JTextField productName = null;
     return productName;
 }
 
 public javax.swing.JTextField getProductPrice() {
+        JTextField productPrice = null;
     return productPrice;
 }
 
