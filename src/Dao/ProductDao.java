@@ -1,56 +1,56 @@
 package Dao;
 
+import database.MySqlConnection;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
-import java.sql.ResultSet;
-
-import database.Database;
-import database.MySqlConnection;
+import javax.swing.JPanel;
 import model.ProductModel;
+import view.Accessories;
+import view.ProductCard;
 
 public class ProductDao {
     MySqlConnection mysql = new MySqlConnection();
+    
 
     public void createProduct(ProductModel product) {
         String sql = "INSERT INTO tblproduct (productName, img, productPrice, productRating, productId) VALUES (?, ?, ?, ?, ?)";
-        try (Connection conn = Database.getConnection();
+        System.out.println("trying to enter data in");
+        try (Connection conn = mysql.openConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setString(1, product.getProductName());
-            pstmt.setString(2, product.getImg());
+            pstmt.setString(2, product.getImg()); // this is a path
             pstmt.setInt(3, product.getProductPrice());
-            pstmt.setInt(4, product.getProductRating()); // default 0
-            pstmt.setInt(5, product.getProductId()); // default 0
+            pstmt.setInt(4, product.getProductRating());
+            pstmt.setInt(5, product.getProductId());
 
             pstmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle exception appropriately
         }
-    }
     }
 
     public List<ProductModel> getAllProducts() {
+        System.out.println("get all products");
+        
         List<ProductModel> products = new ArrayList<>();
         Connection conn = mysql.openConnection();
-        String sql = "SELECT * FROM products";
+        String sql = "SELECT * FROM tblproduct"; // fix table name
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql);
              ResultSet rs = pstmt.executeQuery()) {
             while (rs.next()) {
                 ProductModel product = new ProductModel(
                     rs.getString("productName"),
-                    rs.getString("productImage"),
+                    rs.getString("img"), // fix column name to match insert
                     rs.getInt("productPrice"),
                     rs.getInt("productRating"),
                     rs.getInt("productId")
                 );
-                product.setProductId(rs.getInt("productId")); // set ID from DB
                 products.add(product);
             }
         } catch (SQLException ex) {
@@ -64,7 +64,7 @@ public class ProductDao {
 
     public void updateProduct(ProductModel product) {
         Connection conn = mysql.openConnection();
-        String sql = "UPDATE products SET productName=?, productImage=?, productPrice=?, productRating=? WHERE productId=?";
+        String sql = "UPDATE tblproduct SET productName=?, img=?, productPrice=?, productRating=? WHERE productId=?"; // fix table and column names
 
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, product.getProductName());
@@ -80,4 +80,6 @@ public class ProductDao {
             mysql.closeConnection(conn);
         }
     }
+    
+    
 }

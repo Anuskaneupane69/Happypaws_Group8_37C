@@ -1,13 +1,16 @@
 
 package view;
 
+import Dao.ProductDao;
 import view.AdminDashboard;
 import java.awt.event.ActionListener;
 import javax.swing.JFileChooser;
 import javax.swing.ImageIcon;
 import java.io.File;
 import java.awt.Image;
+import java.util.ArrayList;
 import javax.swing.JLabel;
+import model.ProductModel;
 
 
 public class ProductFrame extends javax.swing.JFrame {
@@ -28,7 +31,7 @@ public class ProductFrame extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         Savebtn = new javax.swing.JButton();
         img = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Back = new javax.swing.JButton();
         Productid = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,7 +76,12 @@ public class ProductFrame extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Back");
+        Back.setText("Back");
+        Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackActionPerformed(evt);
+            }
+        });
 
         Productid.setText("Id");
         Productid.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +117,7 @@ public class ProductFrame extends javax.swing.JFrame {
                         .addGap(0, 15, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Back, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -118,7 +126,7 @@ public class ProductFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(Back)
                         .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(Productid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -159,35 +167,12 @@ public class ProductFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ProductpriceActionPerformed
 
-    private void imgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_imgActionPerformed
-        // TODO add your handling code here:
-//        JFileChooser fileChooser = new JFileChooser();
-//        fileChooser.setDialogTitle("Select Profile Picture");
-//
-//        // Only allow image files
-//        fileChooser.setAcceptAllFileFilterUsed(false);
-//        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter(
-//            "Image files", "jpg", "png", "jpeg", "gif"));
-//
-//    int result = fileChooser.showOpenDialog(this);
-//
-//    if (result == JFileChooser.APPROVE_OPTION) {
-//        File selectedFile = fileChooser.getSelectedFile();
-//        ImageIcon icon = new ImageIcon(selectedFile.getAbsolutePath());
-//
-//        // Resize the image
-//        Image img = icon.getImage().getScaledInstance(150, 100, Image.SCALE_SMOOTH);
-//
-//        if(AdminDashboard.instance!= null){
-//            AdminDashboard.instance.addImageToPanel(img);
-//        }
-//
-//        }
+    private String selectedImagePath; // Declare at class level
 
+private void imgActionPerformed(java.awt.event.ActionEvent evt) {
     JFileChooser fileChooser = new JFileChooser();
     fileChooser.setDialogTitle("Select Profile Picture");
 
-    // Only allow image files
     fileChooser.setAcceptAllFileFilterUsed(false);
     fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter(
         "Image files", "jpg", "png", "jpeg", "gif"));
@@ -196,20 +181,24 @@ public class ProductFrame extends javax.swing.JFrame {
 
     if (result == JFileChooser.APPROVE_OPTION) {
         File selectedFile = fileChooser.getSelectedFile();
-        ImageIcon icon = new ImageIcon(selectedFile.getAbsolutePath());
+        selectedImagePath = selectedFile.getAbsolutePath(); // ✅ Store the path here
 
-        // Resize the image
+        ImageIcon icon = new ImageIcon(selectedImagePath);
         Image resizedImage = icon.getImage().getScaledInstance(150, 100, Image.SCALE_SMOOTH);
         JLabel imageLabel = new JLabel(new ImageIcon(resizedImage));
 
-//        // Add the new image to the panel
-//        imagePanel.add(imageLabel);
-//        imagePanel.revalidate();  // Refresh layout
-//        imagePanel.repaint();     // Redraw panel
-//    }
+        // imagePanel.add(imageLabel);
+        // imagePanel.revalidate();
+        // imagePanel.repaint();
+    }
 }
-        
-    }//GEN-LAST:event_imgActionPerformed
+public String getSelectedImagePath() {
+    return selectedImagePath;
+
+}
+    private ArrayList<ProductModel> productList = new ArrayList<>();
+
+                                   
 
     private void ProductratingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductratingActionPerformed
         // TODO add your handling code here:
@@ -221,9 +210,31 @@ public class ProductFrame extends javax.swing.JFrame {
 
     private void SavebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SavebtnActionPerformed
         // TODO add your handling code here:
-        
-        
+         System.out.println("Selected Image Path: " + selectedImagePath);
+         
+         try {
+                    String name = this.ProductnameField().getText();
+                    String imagePath = this.getSelectedImagePath();
+                    int price = Integer.parseInt(this.ProductpriceField().getText());
+                    int rating = Integer.parseInt(this.ProductratingField().getText());
+                    int id = Integer.parseInt(this.ProductidField().getText());
+
+
+                    ProductModel product = new ProductModel(name,imagePath, price, rating, id);
+                    productList.add(product);
+                    
+                    ProductDao prdct = new ProductDao();
+                    prdct.createProduct(product);
+                    System.out.println("Product saved: " + name);
+                } catch (NumberFormatException ex) {
+                    System.out.println("Error: Please enter valid numbers.");
+                }
+
     }//GEN-LAST:event_SavebtnActionPerformed
+
+    private void BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackActionPerformed
+this.dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_BackActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -258,13 +269,13 @@ public class ProductFrame extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Back;
     private javax.swing.JTextField Productid;
     private javax.swing.JTextField Productname;
     private javax.swing.JTextField Productprice;
     private javax.swing.JTextField Productrating;
     private javax.swing.JButton Savebtn;
     private javax.swing.JButton img;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
@@ -285,7 +296,9 @@ public javax.swing.JTextField ProductidField() {
         return Productid;
     }
 
-public javax.swing.JButton imgField() {
-        return img;
-    }
+    public javax.swing.JButton imgField() {
+            return img;
+        }
+
+    
 }

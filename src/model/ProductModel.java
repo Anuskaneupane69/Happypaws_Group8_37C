@@ -1,23 +1,25 @@
 package model;
 
+
 public class ProductModel {
     private String productName;
     private int productPrice;
     private int productRating;
-    private String img;
+    private String img; // stores image path
     private int productId;
 
-    // Constructor without productId (set separately if needed)
+    // Full constructor
     public ProductModel(String productName, String img, int productPrice, int productRating, int productId) {
         this.productName = productName;
+        this.img = img;
         this.productPrice = productPrice;
         this.productRating = productRating;
-        this.img = img;
-        this.productId =productId;
+        this.productId = productId;
     }
-    // New constructor for easy creation without rating and id
+
+    // Optional constructor with only essential info
     public ProductModel(String productName, String img, int productPrice) {
-        this(productName, img, productPrice, 0, 0);
+        this(productName, img, productPrice, 0, 0); // default rating and ID
     }
 
     // Getters and Setters
