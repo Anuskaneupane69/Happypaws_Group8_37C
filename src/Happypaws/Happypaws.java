@@ -28,14 +28,15 @@ public class Happypaws {
             System.out.println("Failed to connect to database");
         }
         
-//        Signup myprojform = new Signup();
-//        myprojform.setVisible(true);
-//        SignupController controller = new SignupController(myprojform);
+        Signup myprojform = new Signup();
+        myprojform.setVisible(true);
+        SignupController controller = new SignupController(myprojform);
+        controller.open();
         
         
-       
-Dashboard dash = new Dashboard();
-dash.open();
+//       
+//Dashboard dash = new Dashboard();
+//dash.open();
 
 
 //        AdminDashboard admin = new AdminDashboard();

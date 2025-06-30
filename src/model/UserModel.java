@@ -8,13 +8,13 @@ package model;
  *
  * @author anux
  */
-public class User {
+public class UserModel {
     private int id;
     private String username;
     private String email;
     private String password;
     
-    public User(String username, String email, String password){
+    public UserModel(String username, String email, String password){
         this.username = username;
         this.email = email;
         this.password = password;

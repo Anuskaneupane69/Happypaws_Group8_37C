@@ -3,7 +3,7 @@ package Controller;
 import Dao.UserDao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import model.User;
+import model.UserModel;
 import view.Signup;
 import view.Login;
 
@@ -36,13 +36,14 @@ public class SignupController {
             String email = userView.getEmailField().getText();
             String password = new String(userView.getPasswordField().getPassword());
 
-            User user = new User(username, email, password);
+            UserModel user = new UserModel(username, email, password);
             UserDao dao = new UserDao();
             boolean result = dao.signup(user);
 
 
             if (result) {
                 System.out.println("User registered successfully");
+                
             } else {
                 System.out.println("Failed to register user");
             }

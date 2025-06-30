@@ -8,12 +8,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import database.MySqlConnection;
 import model.LoginRequest;
-import model.User;
 
 public class UserDao {
     MySqlConnection mysql = new MySqlConnection();
 
-    public boolean signup(User user){
+    public boolean signup(model.UserModel user){
         Connection conn = mysql.openConnection();
         String sql = "INSERT INTO user (name,email,password) VALUES (?,?,?)";
         try(PreparedStatement pstm = conn.prepareStatement(sql)){
@@ -31,7 +30,7 @@ public class UserDao {
         }
     }
 
-    public boolean CheckUser(User user){
+    public boolean CheckUser(model.UserModel user){
         Connection conn = mysql.openConnection();
         String sql = "SELECT * FROM user WHERE email = ? AND password = ?";
         try(PreparedStatement pstm = conn.prepareStatement(sql)){
@@ -47,7 +46,7 @@ public class UserDao {
         return false;
     }
 
-public User Login(LoginRequest login){
+public model.UserModel Login(LoginRequest login){
         Connection conn = mysql.openConnection();
         String sql = "SELECT * FROM user where email = ? and password = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -55,7 +54,7 @@ public User Login(LoginRequest login){
             pstmt.setString(2, login.getpassword());
             ResultSet result = pstmt.executeQuery();
     if (result.next()) {
-        User user = new User(
+                model.UserModel user = new model.UserModel(
             result.getString("email"),
             result.getString("name"), // or username if you have one
             result.getString("password")

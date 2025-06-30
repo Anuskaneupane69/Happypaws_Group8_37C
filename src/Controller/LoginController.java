@@ -5,7 +5,7 @@ import Dao.UserDao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import model.User;
+import model.UserModel;
 import view.Login;
 import model.LoginRequest;
 import view.Dashboard;
@@ -45,20 +45,23 @@ public class LoginController {
                 close(); // close login view
             } else {
                 LoginRequest user = new LoginRequest(email, password);
-                User loginUser = userDao.Login(user);
+                UserModel loginUser = userDao.Login(user);
                 if (loginUser == null) {
                     JOptionPane.showMessageDialog(userView, "Invalid Credentials");
                 } else {
                     // success
                     JOptionPane.showMessageDialog(userView, "Login Successful");
                     Dashboard dashboard = new Dashboard();
-                    dashboard.setVisible(true);
                     close();
+                    dashboard.setVisible(true);
+//                    DashboardController controller = new DashboardController(dashboard);
+//                    close();
+//                    controller.open();
                 }
             }
         } catch (Exception ex) {
             System.out.println("Error adding user: " + ex.getMessage());
         }
     }
-}
+    }
 }

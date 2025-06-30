@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package model;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -11,7 +8,7 @@ import java.time.Period;
  *
  * @author suyas
  */
-public class Pet {
+public class PetinfoModel {
     private int petId;
     private String name;
     private String species;
@@ -20,13 +17,13 @@ public class Pet {
     private double lastWeight;
     private LocalDateTime lastWeightUpdate;
     private Double updatedWeight; 
-    private byte[] image; 
+    private String image; 
 
     // Constructors
-    public Pet() {}
+    public PetinfoModel() {}
 
-    public Pet(int petId, String name, String species,int age, LocalDate birthday, double lastWeight, 
-               LocalDateTime lastWeightUpdate, byte[] image) {
+    public PetinfoModel(int petId, String name, String species,int age, LocalDate birthday, double lastWeight, 
+               LocalDateTime lastWeightUpdate, String image) {
         this.petId = petId;
         this.name = name;
         this.species = species;
@@ -100,8 +97,13 @@ public class Pet {
     public Double getUpdatedWeight() { return updatedWeight; }
     public void setUpdatedWeight(Double updatedWeight) { this.updatedWeight = updatedWeight; }
 
-    public byte[] getImage() { return image; }
-    public void setImage(byte[] image) { this.image = image; }
+    private String getimage;
+    public String getImage() {
+        return image;
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
 
     /**
      *
