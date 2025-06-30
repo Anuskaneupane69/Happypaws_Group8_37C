@@ -4,23 +4,16 @@
  */
 package view;
 
-import java.awt.Image;
-import java.io.File;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 /**
  *
  * @author deeptighimire
  */
-public class PetProfile extends javax.swing.JFrame {
+public class Birthday extends javax.swing.JFrame {
 
     /**
      * Creates new form Birthday
      */
-    public PetProfile() {
+    public Birthday() {
         initComponents();
     }
 
@@ -39,6 +32,7 @@ public class PetProfile extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
         jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -47,23 +41,25 @@ public class PetProfile extends javax.swing.JFrame {
         speciesLabel = new javax.swing.JLabel();
         ageLabel = new javax.swing.JLabel();
         birthdayLabel = new javax.swing.JLabel();
-        Petname = new javax.swing.JTextField();
-        Petspecies = new javax.swing.JTextField();
-        Petage = new javax.swing.JTextField();
-        Petbirthday = new javax.swing.JTextField();
+        nameText = new javax.swing.JTextField();
+        speciesText = new javax.swing.JTextField();
+        ageText = new javax.swing.JTextField();
+        birthdayText = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         lastupdateweightLabel = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         updateweightLabel = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
-        Petweight = new javax.swing.JTextField();
+        weightText = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        AddImg = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
 
@@ -87,6 +83,8 @@ public class PetProfile extends javax.swing.JFrame {
             .addGap(0, 100, Short.MAX_VALUE)
         );
 
+        jLabel3.setText("jLabel3");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAutoRequestFocus(false);
         setBackground(new java.awt.Color(255, 204, 153));
@@ -105,6 +103,7 @@ public class PetProfile extends javax.swing.JFrame {
         );
 
         jPanel2.setBackground(new java.awt.Color(246, 221, 194));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -116,13 +115,13 @@ public class PetProfile extends javax.swing.JFrame {
 
         birthdayLabel.setText("Birthday :");
 
-        Petname.setText("Enter the Name");
+        nameText.setText("Enter the Name");
 
-        Petspecies.setText("Enter the Species");
+        speciesText.setText("Enter the Species");
 
-        Petage.setText("Enter the Age");
+        ageText.setText("Enter the Age");
 
-        Petbirthday.setText("Enter Birthday");
+        birthdayText.setText("Enter Birthday");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -138,10 +137,10 @@ public class PetProfile extends javax.swing.JFrame {
                     .addComponent(birthdayLabel))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Petname)
-                    .addComponent(Petspecies, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
-                    .addComponent(Petage)
-                    .addComponent(Petbirthday))
+                    .addComponent(nameText)
+                    .addComponent(speciesText, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                    .addComponent(ageText)
+                    .addComponent(birthdayText))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -150,21 +149,23 @@ public class PetProfile extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(nameLabel)
-                    .addComponent(Petname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(speciesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Petspecies, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(speciesText, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ageLabel)
-                    .addComponent(Petage, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ageText, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(birthdayLabel)
-                    .addComponent(Petbirthday, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(birthdayText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(544, 51, -1, -1));
 
         lastupdateweightLabel.setText("Last Update Weight:");
 
@@ -175,10 +176,10 @@ public class PetProfile extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(255, 153, 51));
         jButton4.setText("Update");
 
-        Petweight.setText("Enter the Weight");
-        Petweight.addActionListener(new java.awt.event.ActionListener() {
+        weightText.setText("Enter the Weight");
+        weightText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PetweightActionPerformed(evt);
+                weightTextActionPerformed(evt);
             }
         });
 
@@ -194,7 +195,7 @@ public class PetProfile extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 159, Short.MAX_VALUE)
                 .addComponent(updateweightLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Petweight, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(weightText, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jButton4)
                 .addGap(35, 35, 35))
@@ -208,9 +209,11 @@ public class PetProfile extends javax.swing.JFrame {
                     .addComponent(jLabel9)
                     .addComponent(updateweightLabel)
                     .addComponent(jButton4)
-                    .addComponent(Petweight, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(weightText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
+
+        jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 299, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -225,81 +228,44 @@ public class PetProfile extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 384, 915, 138));
+
         jButton2.setBackground(new java.awt.Color(255, 153, 0));
         jButton2.setText("Cerification");
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 566, -1, -1));
 
         jButton3.setBackground(new java.awt.Color(255, 153, 51));
         jButton3.setText("Gallery");
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 566, -1, -1));
 
         jButton1.setBackground(new java.awt.Color(255, 153, 51));
         jButton1.setText("Save");
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(793, 557, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(14, 6, 51, 53));
 
-        AddImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2025-06-20 094259.png"))); // NOI18N
-        AddImg.setText("jButton5");
-        AddImg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddImgActionPerformed(evt);
-            }
-        });
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 253, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addGap(237, 237, 237)
-                .addComponent(jButton1)
-                .addGap(76, 76, 76))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
-                                .addComponent(AddImg, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 328, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jScrollPane1)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/aaaaaa.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(AddImg, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(59, 59, 59)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton3))
-                        .addContainerGap(23, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(32, 32, 32))))
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
+
+        jPanel2.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(119, 43, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -312,7 +278,9 @@ public class PetProfile extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
@@ -328,39 +296,10 @@ public class PetProfile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void PetweightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetweightActionPerformed
+    private void weightTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weightTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PetweightActionPerformed
+    }//GEN-LAST:event_weightTextActionPerformed
 
-    private String profileImgPath;
-    
-    private void AddImgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddImgActionPerformed
-JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Select Adoption Image");
-        // Set file filter for image files
-        fileChooser.setAcceptAllFileFilterUsed(false);
-        fileChooser.addChoosableFileFilter(new javax.swing.filechooser.FileNameExtensionFilter(
-                "Image files", "jpg", "png", "jpeg", "gif"));
-        int result = fileChooser.showOpenDialog(this);
-        if (result == JFileChooser.APPROVE_OPTION) {
-            File selectedFile = fileChooser.getSelectedFile();
-            profileImgPath = selectedFile.getAbsolutePath(); // Store the path here
-            // Example: If you want to display the selected image in a JLabel
-            ImageIcon icon = new ImageIcon(profileImgPath);
-            Image resizedImage = icon.getImage().getScaledInstance(150, 100, Image.SCALE_SMOOTH);
-            JLabel imageLabel = new JLabel(new ImageIcon(resizedImage));
-            // You should have a panel to add this label to, e.g., imagePanel
-            JPanel imagePanel = new JPanel(); // Assuming you have an imagePanel defined somewhere
-            imagePanel.removeAll(); // Clear existing images if necessary
-            imagePanel.add(imageLabel);
-            imagePanel.revalidate();
-            imagePanel.repaint();   
-        }// TODO add your handling code here:
-    }//GEN-LAST:event_AddImgActionPerformed
-    
-    public String getprofileImgPath() {
-        return profileImgPath; // Method to retrieve the selected image path
-    }
     /**
      * @param args the command line arguments
      */
@@ -378,41 +317,38 @@ JFileChooser fileChooser = new JFileChooser();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PetProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Birthday.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PetProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Birthday.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PetProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Birthday.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PetProfile.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Birthday.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PetProfile().setVisible(true);
+                new Birthday().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddImg;
-    private javax.swing.JTextField Petage;
-    private javax.swing.JTextField Petbirthday;
-    private javax.swing.JTextField Petname;
-    private javax.swing.JTextField Petspecies;
-    private javax.swing.JTextField Petweight;
     private javax.swing.JLabel ageLabel;
+    private javax.swing.JTextField ageText;
     private javax.swing.JLabel birthdayLabel;
+    private javax.swing.JTextField birthdayText;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -422,38 +358,17 @@ JFileChooser fileChooser = new JFileChooser();
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel lastupdateweightLabel;
     private javax.swing.JLabel nameLabel;
+    private javax.swing.JTextField nameText;
     private javax.swing.JLabel speciesLabel;
+    private javax.swing.JTextField speciesText;
     private javax.swing.JLabel updateweightLabel;
+    private javax.swing.JTextField weightText;
     // End of variables declaration//GEN-END:variables
-
-    void setVisible() {
-        this.setVisible();
-    }
-    
-    public javax.swing.JTextField PetnameField() {
-        return Petname;
-    }
-public javax.swing.JTextField PetbirthdayField() {
-        return Petbirthday;
-    }
-public javax.swing.JTextField PetageField() {
-        return Petage;
-    }
-public javax.swing.JTextField PetspeciesField() {
-        return Petspecies;
-    }
-public javax.swing.JTextField PetweightField() {
-        return Petweight;
-    }
-
-
-    public javax.swing.JButton AddImg() {
-            return AddImg;
-        }
-
 }
