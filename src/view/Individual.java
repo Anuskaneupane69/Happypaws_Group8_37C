@@ -247,7 +247,9 @@ public class Individual extends javax.swing.JFrame {
             }
         });
 
-        btnShowImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/share-icon-2048x1911-60w04qpe 1.png"))); // NOI18N
+        btnShowImage.setBackground(new java.awt.Color(255, 153, 51));
+        btnShowImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icons8-share-26.png"))); // NOI18N
+        btnShowImage.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnShowImage.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnShowImageActionPerformed(evt);
@@ -276,8 +278,8 @@ public class Individual extends javax.swing.JFrame {
                                 .addGap(173, 173, 173)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnShowImage, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(151, 151, 151)
+                        .addComponent(btnShowImage, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(155, 155, 155)
                         .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -302,12 +304,11 @@ public class Individual extends javax.swing.JFrame {
                             .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnShowImage)
-                        .addGap(26, 26, 26))))
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(73, 73, 73)
+                        .addComponent(btnShowImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(16, 16, 16))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -363,9 +364,8 @@ new Gallery().setVisible(true);         // TODO add your handling code here:
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void btnShowImageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowImageActionPerformed
-        // TODO add your handling code here:
-        try {
-        String imageUrl = "https://imgur.com/a/wibbQr0";  // Your image URL
+try {
+        String imageUrl = "https://imgur.com/a/n8A8JAT";  // Your image URL
 
         // New window (JFrame)
         JFrame imageFrame = new JFrame("Link Displayed");
@@ -425,7 +425,7 @@ new Gallery().setVisible(true);         // TODO add your handling code here:
     } catch (Exception e) {
         e.printStackTrace();
         JOptionPane.showMessageDialog(this, "Error opening viewer window");
-    }
+    }        // TODO add your handling code here:
     }//GEN-LAST:event_btnShowImageActionPerformed
 
     /**
