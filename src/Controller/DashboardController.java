@@ -13,12 +13,4 @@ import view.ProductFrame;
 
 
 
-public class DashboardController{
-    private Dashboard dash;
-    public DashboardController(Dashboard dash){
-        this.dash = dash;
-    }
-    public void open(){
-        this.dash.setVisible(true);
-    }
-}
+

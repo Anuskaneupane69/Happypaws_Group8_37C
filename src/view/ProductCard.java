@@ -37,6 +37,7 @@ public class ProductCard extends javax.swing.JPanel {
         ImpProductprice = new javax.swing.JLabel();
         ImpProductrating = new javax.swing.JLabel();
         BuyProduct = new javax.swing.JButton();
+        SellProduct = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -67,6 +68,8 @@ public class ProductCard extends javax.swing.JPanel {
             }
         });
 
+        SellProduct.setText("Sell");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -75,7 +78,9 @@ public class ProductCard extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(39, 39, 39)
-                        .addComponent(BuyProduct))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(SellProduct)
+                            .addComponent(BuyProduct)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,7 +104,9 @@ public class ProductCard extends javax.swing.JPanel {
                 .addComponent(ImpProductrating)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(BuyProduct)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(SellProduct)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -125,6 +132,7 @@ public class ProductCard extends javax.swing.JPanel {
     private javax.swing.JLabel ImpProductprice;
     private javax.swing.JLabel ImpProductrating;
     private javax.swing.JLabel Productimg;
+    private javax.swing.JButton SellProduct;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
