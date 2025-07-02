@@ -12,10 +12,12 @@ import view.Signup;
 import view.Login;
 import Controller.LoginController;
 import Controller.AdoptionController;
+import Controller.NewCertificationController;
 import view.AdminDashboard;
 import view.Accessories;
 import view.AdoptionModule;
 import view.Dashboard;
+import view.NewCertification;
 import view.ProductCard;
 
 
@@ -34,8 +36,8 @@ public class Happypaws {
         
         
        
-Dashboard dash = new Dashboard();
-dash.open();
+//Dashboard dash = new Dashboard();
+//dash.open();
 
 
 //        AdminDashboard admin = new AdminDashboard();
@@ -48,6 +50,10 @@ dash.open();
 //            AdoptionModule accessoriesView = new AdoptionModule(); // Create the Accessories view
 //            AdoptionController controller2 = new AdoptionController(accessoriesView); // Create the controller
 //            controller2.open(); // Open the view
+
+        NewCertification user = new NewCertification();
+        NewCertificationController controller = new NewCertificationController(user);
+        controller.open();
 
         
     }
