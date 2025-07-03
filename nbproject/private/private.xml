@@ -3,62 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Dao/ProductDao.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/ProductFrame.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/AddAdoption.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/model/AdoptionModel.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Dao/UserDao.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/AdoptionModule.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/CustomerCare.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/PetFeedingTracker.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Controller/DashboardController.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Happypaws/Happypaws.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/model/ProductModel.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/AccessoriesView.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Accessories.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/ProductCard.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Dashboard.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Controller/AccessoriesController.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Dao/AdoptionDao.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/AdoptionPannel.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/DashboardCard.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/AdminDashboard.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/FAQ.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/PetProfile.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Screenshot%202025-06-20%20094259.png</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/BookAppointment.java</file>
-            <file>file:/C:/Users/Acer/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Controller/ProductController.java</file>
-=======
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/vaccination.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Controller/SignupController.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Signup.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Login.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Picture1.png</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/README.md</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Vaccination.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Dao/UserDao.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/NewCertification.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Individual.java</file>
             <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Dao/CertificationDao.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/model/CertificationModel.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Controller/NewCertificationController.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Dao/AdoptionDao.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/model/UserSession.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Controller/PetProfileController.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/PetProfile.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Controller/LoginController.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Dao/UserDao.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Dao/ProductDao.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/NewCertification.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Vaccination.java</file>
             <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/InsuranceDetail.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Cart.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/INSURANCE.png</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/model/Pet.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Happypaws/Happypaws.java</file>
             <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/database/Database.java</file>
             <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/database/MySqlConnection.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Controller/PetProfileController.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/VACCINATION_1.png</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/FINAL_update-removebg-preview.png</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Controller/DashboardController.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/PET.png</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Screenshot%202025-05-22%20172222.png</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Screenshot%202025-05-23%20091600.png</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Screenshot%202025-05-23%20122839.png</file>
             <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Gallery.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/imagePanel.java</file>
-            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/e.java</file>
->>>>>>> NewCertification
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Individual.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Controller/AdoptionController.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/LoggedInUser.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/Signup.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/UserProfile_1.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/view/saveProfile.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/model/Profile.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Dao/ProfileDAO.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/database/DatabaseConnection.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Controller/ProfileController.java</file>
+            <file>file:/C:/Users/suyas/OneDrive/Documents/NetBeansProjects/Happypaws_Group8_37C/src/Dao/UserDAO_1.java</file>
         </group>
     </open-files>
 </project-private>

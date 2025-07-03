@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import database.MySqlConnection;
 import model.LoginRequest;
 import model.User;
+import model.UserSession;
 
 public class UserDao {
     MySqlConnection mysql = new MySqlConnection();
@@ -61,7 +62,7 @@ public User Login(LoginRequest login){
             result.getString("password")
                 );
                 user.SetId(result.getInt("id"));
-                
+                UserSession.setUserId(result.getInt("id"));
                 return user;
             }
         } catch (SQLException ex) {
