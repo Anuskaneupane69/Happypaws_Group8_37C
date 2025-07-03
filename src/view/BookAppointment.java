@@ -38,7 +38,6 @@ public class BookAppointment extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         NotesVisit = new javax.swing.JTextArea();
         BookVisit = new javax.swing.JButton();
-        DatePickerVisit = new org.jdesktop.swingx.JXDatePicker();
         TimeVisit = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
 
@@ -189,9 +188,6 @@ public class BookAppointment extends javax.swing.JFrame {
                         .addGap(55, 55, 55)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(DatePickerVisit, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(128, 128, 128)
                         .addComponent(TimeVisit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -207,9 +203,7 @@ public class BookAppointment extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(65, 65, 65)
-                        .addComponent(DatePickerVisit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(101, 101, 101)
                         .addComponent(TimeVisit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(BookVisit, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -305,7 +299,6 @@ public class BookAppointment extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BookVisit;
-    private org.jdesktop.swingx.JXDatePicker DatePickerVisit;
     private javax.swing.JComboBox<String> LocationVisit;
     private javax.swing.JTextArea NotesVisit;
     private javax.swing.JComboBox<String> ReasonVisit;

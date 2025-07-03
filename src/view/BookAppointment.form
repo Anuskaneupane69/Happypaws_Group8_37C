@@ -59,10 +59,6 @@
                           <Component id="jLabel2" min="-2" pref="215" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                          <Component id="DatePickerVisit" min="-2" pref="179" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
                           <Component id="TimeVisit" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -83,9 +79,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" pref="35" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                          <Component id="DatePickerVisit" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
                           <Component id="TimeVisit" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="BookVisit" min="-2" pref="49" max="-2" attributes="0"/>
@@ -314,8 +308,6 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BookVisitActionPerformed"/>
           </Events>
-        </Component>
-        <Component class="org.jdesktop.swingx.JXDatePicker" name="DatePickerVisit">
         </Component>
         <Component class="javax.swing.JComboBox" name="TimeVisit">
           <Properties>

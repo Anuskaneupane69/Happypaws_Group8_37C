@@ -6,18 +6,19 @@ import model.ProductModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import view.AdminDashboard;
 import view.Dashboard;
 import view.ProductFrame;    
 
 
-
+public class DashboardController{
 
 private void initListeners() {
         updateButton.addActionListener((ActionEvent e) -> {
             try {
-                double newWeight = Double.parseDouble(weightField.getText());
+                double newWeight = Double.parseDouble(weigh8tField.getText());
                 currentWeight = newWeight;
                 // In real case, update to database here
                 lastUpdatedLabel.setText("Last Updated Weight : " + currentWeight + " kgs (Today)");
@@ -32,4 +33,4 @@ private void initListeners() {
         galleryButton.addActionListener(e -> JOptionPane.showMessageDialog(null, "Open Gallery"));
         appointmentButton.addActionListener(e -> JOptionPane.showMessageDialog(null, "Book Appointment Page"));
     }
-   
+}

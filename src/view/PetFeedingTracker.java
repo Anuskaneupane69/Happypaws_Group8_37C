@@ -178,6 +178,11 @@ public class PetFeedingTracker extends javax.swing.JFrame {
 
         foodText.setBackground(new java.awt.Color(204, 204, 204));
         foodText.setBorder(null);
+        foodText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                foodTextActionPerformed(evt);
+            }
+        });
 
         amountLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         amountLabel.setText("Amount(cups or gm)");
@@ -299,6 +304,10 @@ public class PetFeedingTracker extends javax.swing.JFrame {
     private void nameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameTextActionPerformed
+
+    private void foodTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foodTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_foodTextActionPerformed
 
     /**
      * @param args the command line arguments
