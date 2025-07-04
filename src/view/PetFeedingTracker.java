@@ -1,24 +1,23 @@
-//package view;
+package view;
 
 import java.awt.Color;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author diya
- */
+
 public class PetFeedingTracker extends javax.swing.JFrame {
     JTextField foodTypeField, amountField;
     JTable feedingTable;
     DefaultTableModel tableModel;
-    
-
     
     public PetFeedingTracker() {
         initComponents();
@@ -62,27 +61,33 @@ public class PetFeedingTracker extends javax.swing.JFrame {
         tableModel = new DefaultTableModel(columns, 0);
         feedingTable = new JTable(tableModel);
         JScrollPane tableScroll = new JScrollPane(feedingTable);
-        tableScroll.setBounds(250, 70, 400, 200);
         add(tableScroll);
 
         JLabel allergiesLabel = new JLabel("<html>Allergies:<br>1. Chocolate<br>2. Momo<br>3. Peanuts</html>");
         allergiesLabel.setBounds(250, 300, 300, 80);
         add(allergiesLabel);
-
-        // Action: Add row to table
-        logButton.addActionListener(e -> {
-            String food = foodTypeField.getText();
-            String amt = amountField.getText();
-            String time = java.time.LocalTime.now().toString();
-            String date = java.time.LocalDate.now().toString();
-            tableModel.addRow(new Object[]{date, time, food, amt});
-        });
-
-        setVisible(true);
+        
+         logButton.addActionListener(e -> addRecord());
     }
 
+    private void addRecord() {
+        String food = foodText.getText();
+        String amount = amountField.getText();
+
+        if (food.isEmpty() || amount.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill both fields", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String date = LocalDate.now().format(DateTimeFormatter.ofPattern("dd MMM"));
+        String time = LocalTime.now().format(DateTimeFormatter.ofPattern("h:mm a"));
+
+        tableModel.addRow(new Object[]{date, time, food, amount});
+
     
-    
+        foodText.setText("");
+        amountField.setText("");
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -206,10 +211,6 @@ public class PetFeedingTracker extends javax.swing.JFrame {
 
         feedingTabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"21st May", "8:30 am", "Pedigree", "1 cup"},
-                {"21st May", "2:00 pm", "Chicken", "300 gm"},
-                {"21st May", "6:30 pm", "Pedigree", "1.5 cups"},
-                {"22nd May", "9:00 am", "Pedigree", "1 cup"},
                 {null, null, null, null}
             },
             new String [] {
@@ -242,10 +243,10 @@ public class PetFeedingTracker extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3)
-                    .addComponent(jScrollPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 438, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21))
         );
         jPanel1Layout.setVerticalGroup(
@@ -265,7 +266,7 @@ public class PetFeedingTracker extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -290,9 +291,6 @@ public class PetFeedingTracker extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameTextActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -343,6 +341,4 @@ public class PetFeedingTracker extends javax.swing.JFrame {
     private javax.swing.JLabel petfeedingtrackerLabel;
     private javax.swing.JLabel typesoffoodLabel;
     // End of variables declaration//GEN-END:variables
-
-
 }
