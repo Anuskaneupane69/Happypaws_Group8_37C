@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package database;
 
 import java.sql.Connection;
@@ -9,17 +6,14 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.*;
 
-/**
- *
- * @author anuska
- */
+
 public class MySqlConnection implements Database {
 
     @Override
     public Connection openConnection() {
         try{
             String username = "root";
-            String password = "password";
+            String password = "suyasha1234";
             String database = "sandy";
             Connection connection;
             connection = DriverManager.getConnection(
@@ -28,7 +22,7 @@ public class MySqlConnection implements Database {
             if(connection == null){
                 System.out.println("Database Connection fail");
             }else{
-                System.out.println("Database Connection Sucess");
+                System.out.println("Database Connection bhayo omg");
             }
             return connection;
         }catch(Exception e){
