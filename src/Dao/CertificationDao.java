@@ -1,16 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Dao;
+import database.MySqlConnection;
 import java.sql.*;
 import java.io.*;
+import model.AdoptionModel;
+import model.CertificationModel;
+import model.UserSession;
 
 /**
  *
  * @author suyas
  */
 public class CertificationDao {
+    
+    MySqlConnection mysql = new MySqlConnection();
     
     private static final String DB_URL = "jdbc:mysql://localhost:3306/pet_certification"; 
     private static final String USER = "root"; 
@@ -20,33 +23,37 @@ public class CertificationDao {
         return DriverManager.getConnection(DB_URL, USER, PASSWORD);
     }
 
-    public void uploadVaccinationRecord(int petId, File imageFile) {
-        String sql = "INSERT INTO vaccination_records (pet_id, record_image) VALUES (?, ?)";
-        try (Connection conn = connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql);
-             FileInputStream fis = new FileInputStream(imageFile)) {
+    
+    public void insertVaccationImagePath(CertificationModel certificate) {
+        String sql = "INSERT INTO vaccination_table (id, image_path) VALUES (?, ?)";
+        
+        Connection conn = mysql.openConnection();
 
-            pstmt.setInt(1, petId);
-            pstmt.setBinaryStream(2, fis, (int) imageFile.length());
+        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1,UserSession.getUserId() );
+            pstmt.setString(2, certificate.getVaccinationImagePath());
+            
             pstmt.executeUpdate();
-            System.out.println("Vaccination record uploaded.");
-        } catch (Exception e) {
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
-
-    public void uploadInsuranceDetail(int petId, File imageFile) {
-        String sql = "INSERT INTO insurance_details (pet_id, insurance_image) VALUES (?, ?)";
-        try (Connection conn = connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql);
-             FileInputStream fis = new FileInputStream(imageFile)) {
-
-            pstmt.setInt(1, petId);
-            pstmt.setBinaryStream(2, fis, (int) imageFile.length());
-            pstmt.executeUpdate();
-            System.out.println("Insurance detail uploaded.");
-        } catch (Exception e) {
-        }
-    }
-}
     
 
+
+public void insertInsuranceImagePath(CertificationModel insurance) {
+        String sql = "INSERT INTO insurance_table (id, image_path) VALUES (?, ?)";
+        Connection conn = mysql.openConnection();
+        try ( 
+            PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setInt(1,UserSession.getUserId() );
+            pstmt.setString(2, insurance.getInsuranceImagePath());
+            
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+}
+   

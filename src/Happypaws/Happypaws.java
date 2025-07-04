@@ -12,10 +12,12 @@ import view.Signup;
 import view.Login;
 import Controller.LoginController;
 import Controller.AdoptionController;
+import Controller.NewCertificationController;
 import view.AdminDashboard;
 import view.Accessories;
 import view.AdoptionModule;
 import view.Dashboard;
+import view.NewCertification;
 import view.ProductCard;
 
 
@@ -27,27 +29,10 @@ public class Happypaws {
         }else{
             System.out.println("Failed to connect to database");
         }
-        
-//        Signup myprojform = new Signup();
-//        myprojform.setVisible(true);
-//        SignupController controller = new SignupController(myprojform);
-        
-        
-       
-Dashboard dash = new Dashboard();
-dash.open();
 
-
-//        AdminDashboard admin = new AdminDashboard();
-//        admin.setVisible(true);
-        
-//    Accessories admin = new Accessories();
-//    AccessoriesController controller1 = new AccessoriesController(admin);
-//        controller1.open();
-//
-//            AdoptionModule accessoriesView = new AdoptionModule(); // Create the Accessories view
-//            AdoptionController controller2 = new AdoptionController(accessoriesView); // Create the controller
-//            controller2.open(); // Open the view
+        NewCertification user = new NewCertification();
+        NewCertificationController controller = new NewCertificationController(user);
+        controller.open();
 
         
     }

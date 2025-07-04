@@ -50,6 +50,7 @@ public class LoginController {
                     JOptionPane.showMessageDialog(userView, "Invalid Credentials");
                 } else {
                     // success
+                    
                     JOptionPane.showMessageDialog(userView, "Login Successful");
                     Dashboard dashboard = new Dashboard();
                     dashboard.setVisible(true);

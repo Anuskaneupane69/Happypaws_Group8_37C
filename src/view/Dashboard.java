@@ -11,10 +11,17 @@ import javax.swing.JPanel;
  *
  * @author diya
  */
+<<<<<<< HEAD
 public class Dashboard extends javax.swing.JPanel {
 
     /**
      * Creates new form ProfileCreation
+=======
+public class Dashboard extends javax.swing.JFrame {
+
+    /**
+     * Creates new form 
+>>>>>>> NewCertification
      */
     public Dashboard() {
         initComponents();
