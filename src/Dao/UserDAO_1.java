@@ -8,6 +8,6 @@ package Dao;
  *
  * @author suyas
  */
-public class UserDAO {
+public class UserDAO_1{
     
 }

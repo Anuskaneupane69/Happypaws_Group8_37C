@@ -4,10 +4,13 @@
  */
 package view;
 
+import Controller.ProfileController;
 import java.awt.Image;
+import java.awt.event.ActionListener;
 import java.io.File;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
@@ -15,13 +18,23 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author suyas
  */
 public class saveProfile extends javax.swing.JFrame {
+private ProfileController controller;
+private String currentPhotoPath;
+private javax.swing.JLabel jLabel1;
+
+public String getCurrentPhotoPath(){
+    return currentPhotoPath;
+}
 
     /**
      * Creates new form saveProfile
      */
     public saveProfile() {
         initComponents();
+        controller = new ProfileController(this);
+        
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,23 +51,22 @@ public class saveProfile extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jUsername = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jEmail = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jPhone = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jDOB = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         updated = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         photo = new javax.swing.JLabel();
         profilebutton = new javax.swing.JButton();
 
@@ -77,14 +89,14 @@ public class saveProfile extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 153, 51));
         jLabel4.setText("User Name");
 
-        jTextField1.setBackground(new java.awt.Color(255, 204, 204));
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField1.setText("    Enter User Name");
-        jTextField1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jUsername.setBackground(new java.awt.Color(255, 204, 204));
+        jUsername.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jUsername.setForeground(new java.awt.Color(153, 153, 153));
+        jUsername.setText("Enter User Name");
+        jUsername.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51)));
+        jUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jUsernameActionPerformed(evt);
             }
         });
 
@@ -94,11 +106,11 @@ public class saveProfile extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 153, 51));
         jLabel5.setText("Email id");
 
-        jTextField2.setBackground(new java.awt.Color(255, 204, 204));
-        jTextField2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField2.setText("        Enter Email id");
-        jTextField2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51)));
+        jEmail.setBackground(new java.awt.Color(255, 204, 204));
+        jEmail.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jEmail.setForeground(new java.awt.Color(153, 153, 153));
+        jEmail.setText("        Enter Email id");
+        jEmail.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51)));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/email-removebg-preview 1.png"))); // NOI18N
 
@@ -106,11 +118,11 @@ public class saveProfile extends javax.swing.JFrame {
         jLabel8.setForeground(new java.awt.Color(255, 153, 0));
         jLabel8.setText("Phone Number");
 
-        jTextField3.setBackground(new java.awt.Color(255, 204, 204));
-        jTextField3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField3.setText("      Enter 10 digit Number");
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(251, 51, 51)));
+        jPhone.setBackground(new java.awt.Color(255, 204, 204));
+        jPhone.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jPhone.setForeground(new java.awt.Color(153, 153, 153));
+        jPhone.setText("      Enter 10 digit Number");
+        jPhone.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(251, 51, 51)));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/phone-removebg-preview 1.png"))); // NOI18N
 
@@ -118,11 +130,11 @@ public class saveProfile extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 153, 51));
         jLabel10.setText("Date Of Birth");
 
-        jTextField4.setBackground(new java.awt.Color(255, 204, 204));
-        jTextField4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(153, 153, 153));
-        jTextField4.setText("      DD / MM / YYYY");
-        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(251, 51, 51)));
+        jDOB.setBackground(new java.awt.Color(255, 204, 204));
+        jDOB.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jDOB.setForeground(new java.awt.Color(153, 153, 153));
+        jDOB.setText("      DD / MM / YYYY");
+        jDOB.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(251, 51, 51)));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/date-removebg-preview 1.png"))); // NOI18N
 
@@ -171,7 +183,7 @@ public class saveProfile extends javax.swing.JFrame {
                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -185,7 +197,7 @@ public class saveProfile extends javax.swing.JFrame {
                                         .addGap(29, 29, 29)
                                         .addComponent(jLabel11)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,12 +209,12 @@ public class saveProfile extends javax.swing.JFrame {
                                     .addContainerGap()
                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                     .addGap(86, 86, 86)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(27, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -225,7 +237,7 @@ public class saveProfile extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(19, 19, 19)
                         .addComponent(jLabel5))
                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -234,14 +246,14 @@ public class saveProfile extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPhone, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel10)
@@ -250,7 +262,7 @@ public class saveProfile extends javax.swing.JFrame {
                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jDOB, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(updated, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
@@ -285,9 +297,6 @@ public class saveProfile extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setText("Lacey Fernandez");
-
         photo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/image (1).png"))); // NOI18N
 
         profilebutton.setBackground(new java.awt.Color(255, 203, 148));
@@ -306,12 +315,9 @@ public class saveProfile extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButton2)
                 .addGap(290, 290, 290)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(profilebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(photo, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(profilebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(266, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -325,8 +331,7 @@ public class saveProfile extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(35, 35, 35)
                                 .addComponent(profilebutton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                        .addComponent(jLabel1))
+                        .addGap(0, 25, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jButton2)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
@@ -353,9 +358,12 @@ public class saveProfile extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+//        if(jUsername.getText().equals("Enter User Name")){
+//            jUsername .setText("");
+//        }
+    }//GEN-LAST:event_jUsernameActionPerformed
 
     private void updatedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatedActionPerformed
         // TODO add your handling code here:
@@ -367,7 +375,7 @@ public class saveProfile extends javax.swing.JFrame {
 
     private void profilebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profilebuttonActionPerformed
         // TODO add your handling code here:
-       
+       currentPhotoPath =  "View/pp.jpg";
     JFileChooser fileChooser = new JFileChooser();
     fileChooser.setDialogTitle("Choose Profile Picture");
 
@@ -436,7 +444,8 @@ public class saveProfile extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jDOB;
+    private javax.swing.JTextField jEmail;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -451,12 +460,41 @@ public class saveProfile extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jPhone;
+    private javax.swing.JTextField jUsername;
     private javax.swing.JLabel photo;
     private javax.swing.JButton profilebutton;
     private javax.swing.JButton updated;
     // End of variables declaration//GEN-END:variables
+ public void updateProfileDisplay(String username, String photoPath) {
+//        jLabel1.setText(username);
+        if (photoPath != null && !photoPath.isEmpty()) {
+            ImageIcon originalIcon = new ImageIcon(photoPath);
+            Image resizedImage = originalIcon.getImage().getScaledInstance(photo.getWidth(), photo.getHeight(), Image.SCALE_SMOOTH);
+            photo.setIcon(new ImageIcon(resizedImage));
+        }
+    }
+ 
+ public void AddSaveListener(ActionListener listener){
+     updated.addActionListener(listener);
+ } 
+ 
+ public JTextField getUsernameField(){
+     return jUsername;
+     
+ }
+ 
+ public JTextField getEmailField(){
+     return jEmail;
+     
+ }
+ public JTextField getPhoneField(){
+     return jPhone;
+     
+ }
+ public JTextField getDOBField(){
+     return jDOB;
+     
+ }
+
 }

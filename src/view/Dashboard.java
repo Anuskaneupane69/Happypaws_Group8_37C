@@ -15,10 +15,10 @@ import javax.swing.JOptionPane;
  *
  * @author diya
  */
-public final class Dashboard extends javax.swing.JFrame {
+public class Dashboard extends javax.swing.JFrame {
 
     /**
-     * Creates new form userdashboard
+     * Creates new form 
      */
     public Dashboard() {
         initComponents();
