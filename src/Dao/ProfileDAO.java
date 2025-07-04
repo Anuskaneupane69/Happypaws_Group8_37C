@@ -31,25 +31,7 @@ public class ProfileDAO {
         }
     }
 
-//    public Profile getProfileByUsername(String username) throws SQLException {
-//        String sql = "SELECT * FROM users WHERE username = ? ORDER BY id DESC LIMIT 1";
-//        try (Connection conn = DatabaseConnection.getConnection();
-//             PreparedStatement stmt = conn.prepareStatement(sql)) {
-//            stmt.setString(1, username);
-//            ResultSet rs = stmt.executeQuery();
-//            if (rs.next()) {
-//                Profile profile = new Profile();
-//                profile.setId(rs.getInt("id"));
-//                profile.setUsername(rs.getString("username"));
-//                profile.setEmail(rs.getString("email"));
-//                profile.setPhone(rs.getString("phone"));
-//                profile.setDob(rs.getString("dob"));
-//                profile.setPhotoPath(rs.getString("photo_path"));
-//                return profile;
-//            }
-//            return null;
-//        }
-//    }
+
      
      public Profile fetchUser(){
          Connection conn = mysql.openConnection();
