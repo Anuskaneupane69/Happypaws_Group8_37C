@@ -130,18 +130,7 @@ public class ProfileController {
             }
     }
 
-//    private void updateProfileDisplay(String username, String photoPath) {
-////        view.jLabel1.setText(username);
-////        if (photoPath != null && !photoPath.isEmpty()) {
-////            ImageIcon originalIcon = new ImageIcon(photoPath);
-////            Image resizedImage = originalIcon.getImage().getScaledInstance(view.photo.getWidth(), view.photo.getHeight(), Image.SCALE_SMOOTH);
-////            view.photo.setIcon(new ImageIcon(resizedImage));
-////        }
-//    }
 
-//    private void showError(String message) {
-//        JOptionPane.showMessageDialog(view, message, "Error", JOptionPane.ERROR_MESSAGE);
-//    }
      public void loadUserData() {
         Profile user = profileDAO.fetchUser();
         if (user != null) {
