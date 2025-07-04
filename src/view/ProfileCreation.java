@@ -1,9 +1,8 @@
+package view;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package view;
-
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -346,8 +345,8 @@ public class ProfileCreation extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ProfileCreation bd = new ProfileCreation();
-                bd.setVisible(true);
+                
+                new ProfileCreation().setVisible(true);
             }
         });
     }
@@ -395,6 +394,5 @@ public javax.swing.JTextField weightTextField() {
 public javax.swing.JTextField birthdayTextField() {
         return birthdayText;
     }
-}
 
 

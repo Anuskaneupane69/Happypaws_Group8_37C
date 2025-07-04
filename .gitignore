@@ -12,4 +12,6 @@ dist/
 nbdist/
 .nb-gradle/
 
+*.class
+
 # En

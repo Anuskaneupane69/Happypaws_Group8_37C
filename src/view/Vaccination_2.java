@@ -8,12 +8,12 @@ package view;
  *
  * @author suyas
  */
-public class Vaccination extends javax.swing.JFrame {
+public class Vaccination_2 extends javax.swing.JFrame {
 
     /**
      * Creates new form Vaccination
      */
-    public Vaccination() {
+    public Vaccination_2() {
         initComponents();
     }
 

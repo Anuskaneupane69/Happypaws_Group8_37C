@@ -397,7 +397,7 @@ public class NewCertification extends javax.swing.JFrame {
 
     private void ArrowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ArrowActionPerformed
 this.dispose();
-new Individual().setVisible(true);         // TODO add your handling code here:
+new PetProfileCreation().setVisible(true);         // TODO add your handling code here:
     }//GEN-LAST:event_ArrowActionPerformed
 
     private void SaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveActionPerformed
