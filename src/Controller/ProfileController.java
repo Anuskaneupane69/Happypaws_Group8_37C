@@ -44,87 +44,14 @@ public class ProfileController {
         }
     }
 
-//    public void saveProfile(String username, String email, String phone, String dob, String photoPath) {
-//        try {
-//            Profile profile = new Profile(username, email, phone, dob, photoPath);
-//            profileDAO.saveProfile(profile);
-//            // Update the view with the saved data
-//            view.updateProfileDisplay(username, photoPath);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            // Handle error (e.g., show error message in view)
-//            JOptionPane.showMessageDialog(view,"Error saving profile: " + e.getMessage());
-//        }
-//    }
-//
-//    public void loadUserProfile(String username) {
-//        try {
-//            Profile profile = profileDAO.getProfileByUsername(username);
-//            if (profile != null) {
-//                view.updateProfileDisplay(profile.getUsername(), profile.getPhotoPath());
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            JOptionPane.showMessageDialog(view,"Error loading profile: " + e.getMessage());
-//        }
-//    }
-    
+
     class SaveListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
                 saveUserData();
-//            public void saveProfile(String username, String email, String phone, String dob, String photoPath) {
-//        try {
-//            Profile profile = new Profile(username, email, phone, dob, photoPath);
-//            profileDAO.saveProfile(profile);
-//            // Update the view with the saved data
-//            view.updateProfileDisplay(username, photoPath);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            // Handle error (e.g., show error message in view)
-//            JOptionPane.showMessageDialog(view,"Error saving profile: " + e.getMessage());
-//        }
-//    }
-//
-//    public void loadUserProfile(String username) {
-//        try {
-//            Profile profile = profileDAO.getProfileByUsername(username);
-//            if (profile != null) {
-//                view.updateProfileDisplay(profile.getUsername(), profile.getPhotoPath());
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//            JOptionPane.showMessageDialog(view,"Error loading profile: " + e.getMessage());
-//        }
-//    }
-//        }
-//      String username = view.jUsername.getText().trim();
-//            String email = view.jEmail.getText().trim();
-//            String phone = view.jPhone.getText().trim();
-//            String dob = view.jDOB.getText().trim();
-//            String photoPath = view.currentPhotoPath; // Assuming currentPhotoPath is added to saveProfile
-//
-//            // Basic validation
-//            if (username.isEmpty() || email.isEmpty() || phone.isEmpty() || dob.isEmpty()) {
-//                showError("All fields are required!");
-//                return;
-//            }
-//
-//            // Create User object
-//            Profile user = new Profile(username, email, phone, dob, photoPath);
-//            // Save to database
-//            ProfileDAO.saveUser(user);
-//            // Update view
-//            updateProfileDisplay(username, photoPath);
-//            // Clear input fields
-//            view.jUsername.setText("Enter User Name");
-//            view.jEmail.setText("        Enter Email id");
-//            view.jPhone.setText("      Enter 10 digit Number");
-//            view.jDOB.setText("      DD / MM / YYYY");
-//            JOptionPane.showMessageDialog(view, "Profile saved successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-//        }
+
             } catch (SQLException ex) {
                 Logger.getLogger(ProfileController.class.getName()).log(Level.SEVERE, null, ex);
             }
